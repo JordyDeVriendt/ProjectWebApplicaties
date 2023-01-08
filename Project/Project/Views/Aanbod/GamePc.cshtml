@@ -1,0 +1,46 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@model Project.ViewModels.ComputerListViewModel
+<div class="GamePc text-center">
+    <div class="container">
+        <h1>About Our Prebuilt PC Shop</h1>
+        <div>
+            <p>Bij onze voorgeassembleerde PC-winkel bieden wij een ruim assortiment aan hoogwaardige, voorgeassembleerde computers die klaar zijn om direct uit de doos te gebruiken. Wij hebben computers voor elke behoefte en elk budget, van basic kantoorapparatuur tot krachtige gaming-rigs.</p>
+
+            <p>Ons team van experts selecteert en monteert zorgvuldig elke computer om ervoor te zorgen dat deze aan onze hoge standaarden voldoet voor prestaties en betrouwbaarheid. Wij gebruiken alleen de beste componenten van topfabrikanten en testen elk systeem grondig voordat het naar onze klanten wordt verzonden.</p>
+
+            <p>Wij zijn trots op onze uitstekende klantenservice en ondersteuning. Als u vragen of problemen heeft met uw voorgeassembleerde computer, staat ons team voor u klaar. Wij bieden een uitgebreide garantie- en retourbeleid, zodat u met vertrouwen kunt kopen.</p>
+
+            <p>Bedankt dat u onze voorgeassembleerde PC-winkel in overweging neemt voor uw computingbehoeften. Wij kijken ernaar uit om u van dienst te zijn!</p>
+        </div>
+    </div>
+</div>
+<div class="container GamePcContent">
+    <div class="row">
+        @foreach (var item in Model.Computers)
+        {
+            <div style="padding:10px;" class="col-md-4">
+                <div class="card">
+                    <div class="text-center mainColor" style="padding:10px;">
+                        <h5 class="card-title">@item.Naam</h5>
+                    </div>
+                    <img class="card-img-top" src="~/images/computer.jpg" alt="Card image cap" style="height:auto;">
+                    <div class="card-body">
+                        <p class="card-text">$@item.Prijs</p>
+                        <hr />
+                        <div class="card-text"><b>CPU</b> @item.Cpu</div>
+                        <div class="card-text"><b>GPU</b> @item.Gpu</div>
+                        <div class="card-text"><b>Ram</b> @item.Ram</div>
+                        <div class="card-text"><b>SSD</b> @item.Opslag</div>
+                        <hr />
+                        <a asp-controller="Aanbod" asp-action="Details" asp-route-id="@item.Id" class="btn btn-primary">Bekijk product</a>
+                        <a href="#" class="btn btn-primary">In winkelmandje</a>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>

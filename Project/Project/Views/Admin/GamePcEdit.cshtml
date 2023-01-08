@@ -1,0 +1,82 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    ViewData["Title"] = "Edit";
+}
+@model Project.ViewModels.EditGamePcViewModel
+<div class="container">
+    <h1>Edit</h1>
+    <h4>Computer</h4>
+    <hr />
+    <div class="row">
+        <div class="col-md-4">
+            <form asp-action="GamePcEdit">
+                <input type="hidden" asp-for="Id" />
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group">
+                    <label asp-for="Naam" class="control-label"></label>
+                    <input asp-for="Naam" class="form-control" />
+                    <span asp-validation-for="Naam" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Afbeelding" class="control-label"></label>
+                    <input asp-for="Afbeelding" class="form-control" />
+                    <span asp-validation-for="Afbeelding" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Prijs" class="control-label"></label>
+                    <input asp-for="Prijs" class="form-control" />
+                    <span asp-validation-for="Prijs" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="OperatingSystem" class="control-label"></label>
+                    <input asp-for="OperatingSystem" class="form-control" />
+                    <span asp-validation-for="OperatingSystem" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="CpuCooler" class="control-label"></label>
+                    <input asp-for="CpuCooler" class="form-control" />
+                    <span asp-validation-for="CpuCooler" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Behuizing" class="control-label"></label>
+                    <input asp-for="Behuizing" class="form-control" />
+                    <span asp-validation-for="Behuizing" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Opslag" class="control-label"></label>
+                    <input asp-for="Opslag" class="form-control" />
+                    <span asp-validation-for="Opslag" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Ram" class="control-label"></label>
+                    <input asp-for="Ram" class="form-control" />
+                    <span asp-validation-for="Ram" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Moederbord" class="control-label"></label>
+                    <input asp-for="Moederbord" class="form-control" />
+                    <span asp-validation-for="Moederbord" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Cpu" class="control-label"></label>
+                    <input asp-for="Cpu" class="form-control" />
+                    <span asp-validation-for="Cpu" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Gpu" class="control-label"></label>
+                    <input asp-for="Gpu" class="form-control" />
+                    <span asp-validation-for="Gpu" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Save" class="btn btn-primary" />
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div>
+        <a asp-action="GamePc">Terug naar lijst</a>
+    </div>
+</div>

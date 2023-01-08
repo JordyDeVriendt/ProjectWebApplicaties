@@ -1,0 +1,131 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@model Project.ViewModels.ComputerDetailsViewModel
+
+<div class="container t">
+    <div class="featured-product" style="margin: 100px 0 50px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-around;">
+        <div class="row">
+            <div class="col-md-6">
+                <img  src="~/images/computer.jpg" style="height:auto; width:100%;">
+            </div>
+            <div class="col-md-6">
+                <h1>@Model.Naam</h1>
+                <div class="row">
+                    <div class="col-md-6">
+                        <p>$@Model.Prijs</p>
+                    </div>
+                    <div class="col-md-6">
+                        <p>Hier komt de rating</p>
+                    </div>
+                </div>
+                <hr />
+                <p>Beschrijving</p>
+                <h4>Model</h4>
+                <p>Hier komt combobox</p>
+                <hr />
+                <a href="#" class="btn btn-primary">In winkelmandje</a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="TechSpecs text-white GamePcContent" style="background-color:#8D99AE;">
+    <div class="container Specs">
+        <div class="row">
+            <h1>Tech Specs</h1>
+            <hr />
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="row">
+                    <div class="col-md-6">
+                        <p>CPU</p>
+                    </div>
+                    <div class="col-md-6">
+                        <p>cpu input</p>
+                    </div>
+                </div>
+                <hr />
+                <div class="row">
+                    <div class="col-md-6">
+                        <p>CPU Cooler</p>
+                    </div>
+                    <div class="col-md-6">
+                        <p>@Model.CpuCooler</p>
+                    </div>
+                </div>
+                    <hr />
+                <div class="row">
+                    <div class="col-md-6">
+                        <p>GPU</p>
+                    </div>
+                    <div class="col-md-6">
+                        <p>GPU input</p>
+                    </div>
+                </div>
+                <hr />
+                <div class="row">
+                    <div class="col-md-6">
+                        <p>Ram</p>
+                    </div>
+                    <div class="col-md-6">
+                        <p>@Model.Ram</p>
+                    </div>
+                </div>
+                    <hr />
+                <div class="row">
+                    <div class="col-md-6">
+                        <p>Opslag</p>
+                    </div>
+                    <div class="col-md-6">
+                        <p>@Model.Opslag</p>
+                    </div>
+                </div>
+                    <hr />
+            </div>
+            <div class="col-md-6">
+                <div class="row">
+                    <div class="col-md-6">
+                        <p>Moederbord</p>
+                    </div>
+                    <div class="col-md-6">
+                        <p>@Model.Moederbord</p>
+                    </div>
+                </div>
+                <hr />
+                <div class="row">
+                    <div class="col-md-6">
+                        <p>Voeding</p>
+                    </div>
+                    <div class="col-md-6">
+                        <p>Voeding input</p>
+                    </div>
+                </div>
+                <hr />
+                <div class="row">
+                    <div class="col-md-6">
+                        <p>Behuizing</p>
+                    </div>
+                    <div class="col-md-6">
+                        <p>@Model.Behuizing</p>
+                    </div>
+                </div>
+                <hr />
+                <div class="row">
+                    <div class="col-md-6">
+                        <p>Operating System</p>
+                    </div>
+                    <div class="col-md-6">
+                        <p>@Model.OperatingSystem</p>
+                    </div>
+                </div>
+                    <hr />
+            </div>
+        </div>
+    </div>
+</div>

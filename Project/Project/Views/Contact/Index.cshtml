@@ -1,0 +1,173 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+<style>
+    <!-- Form Style -->
+    form {
+        display: flex;
+        width: 100%;
+        height: 100vh;
+        flex-flow: column;
+    }
+
+    .form-group {
+        position: relative;
+        margin: 12px 0;
+    }
+
+    .form-group input,.form-group textarea {
+        padding: 8px 10px;
+        font-size: 18px;
+        border-radius: 5px;
+        border: #acacac solid 2px;
+        background-color: transparent;
+        color:black;
+        transition: 0.15s all ease;
+    }
+
+    .form-group input:focus, .form-group textarea:focus {
+        border-color: black;
+    }
+
+    .form-group input::placeholder, .form-group textarea::placeholder {
+        color: transparent;
+    }
+
+    .form-group .form-label {
+        position: absolute;
+        top: 9px;
+        left: 0;
+        font-size: 18px;
+        padding: 0 10px;
+        color: #acacac;
+        pointer-events: none;
+        transition: 0.15s all ease;
+    }
+
+    .form-group input:focus + .form-label,
+    .form-group input:not(:placeholder-shown) + .form-label {
+        transform: translate(5px, -22px);
+        background-color: white;
+        font-size: 14px;
+        color: black;
+    }
+
+    .form-group textarea {
+        width:100%;
+    }
+    <!-- Button Style -->
+    .btn-1,
+    .btn-2 {
+        width: 300px;
+        height: 200px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+    .btn-1 a {
+        text-decoration: none;
+        border: 2px solid #010100;
+        padding: 15px;
+        color: #000;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        position: relative;
+        display: inline-block;
+    }
+
+    span {
+        position: relative;
+        z-index: 3;
+    }
+
+    .btn-1 a::before {
+        content: "";
+        position: absolute;
+        top: 5px;
+        left: -2px;
+        width: calc(100% + 6px);
+        height: calc(100% - 10px);
+        background-color: #ffffff;
+        transition: all 0.5s ease-in-out;
+        transform: scaleY(1);
+    }
+
+    .btn-1 a:hover::before {
+        transform: scaleY(0);
+    }
+
+    .btn-1 a::after {
+        content: "";
+        position: absolute;
+        left: 5px;
+        top: -5px;
+        width: calc(100% - 10px);
+        height: calc(100% + 10px);
+        background-color: #ffffff;
+        transition: all 0.5s ease-in-out;
+        transform: scaleX(1);
+    }
+
+    .btn-1 a:hover::after {
+        transform: scaleX(0);
+    }
+</style>
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 text-center">
+            <h1>Contact</h1>
+            <br />
+            <div>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc a iaculis orci. Pellentesque pulvinar tincidunt massa eget euismod. Sed euismod, est quis consectetur ultrices, risus eros tristique lacus, in condimentum tortor elit ac nisl. Aliquam ultricies felis vitae sem sollicitudin, sed rutrum nulla vulputate.
+                </p>
+            </div>
+            <br />
+            <h6>Adress</h6>
+            <h6>Boulevard Jamar 9 / 1060 Saint-Gilles</h6>
+            <br />
+            <h6>Phone</h6>
+            <h6>0486 98 76 54</h6>
+            <br />
+            <h6>E-mail</h6>
+            <h6><a href="mailto: loxal88073@dentaltz.com">loxal88073@dentaltz.com</a></h6>
+        </div>
+        <div class="col-md-6">
+            <h1 class="text-center">Contact Form</h1>
+            <form style="color:black;">
+                <div class="form-group">
+                    <input type="text" placeholder="Naam">
+                    <label class="form-label">Naam</label>
+                </div>
+                <div class="form-group">
+                    <input type="text" placeholder="Email">
+                    <label class="form-label">Email</label>
+                </div>
+                <div class="form-group">
+                    <input type="text" placeholder="Onderwerp">
+                    <label class="form-label">Onderwerp</label>
+                </div>
+                <div class="form-group">
+                    <textarea type="text" placeholder="Bericht" rows="4"></textarea>
+                </div>
+                <div class="row">
+                    <div class="col-md-2">
+                        <input type="checkbox" name="terms" value="terms" />
+                    </div>
+                    <div class="col-md-10">
+                        <label>
+                            Ik ga akkoord met de gebruikersvoorwaarden. Terms of Use
+                        </label>
+                    </div>
+                </div>
+
+                <div class="btn-1">
+                    <a href=""><span>Verzenden</span></a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

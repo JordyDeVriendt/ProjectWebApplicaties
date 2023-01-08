@@ -1,0 +1,173 @@
+﻿@{
+   
+}
+@model Project.ViewModels.ComputerListViewModel
+<style>
+    <!-- Button Style -->
+    .btn-1,
+    .btn-2 {
+        width: 300px;
+        height: 200px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+    .btn-1 a {
+        text-decoration: none;
+        border: 2px solid #010100;
+        padding: 15px;
+        color: #000;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        position: relative;
+        display: inline-block;
+    }
+
+    span {
+        position: relative;
+        z-index: 3;
+    }
+
+    .btn-1 a::before {
+        content: "";
+        position: absolute;
+        top: 5px;
+        left: -2px;
+        width: calc(100% + 6px);
+        height: calc(100% - 10px);
+        background-color: #8D99AE;
+        transition: all 0.5s ease-in-out;
+        transform: scaleY(1);
+    }
+
+    .btn-1 a:hover::before {
+        transform: scaleY(0);
+    }
+
+    .btn-1 a::after {
+        content: "";
+        position: absolute;
+        left: 5px;
+        top: -5px;
+        width: calc(100% - 10px);
+        height: calc(100% + 10px);
+        background-color: #8D99AE;
+        transition: all 0.5s ease-in-out;
+        transform: scaleX(1);
+    }
+
+    .btn-1 a:hover::after {
+        transform: scaleX(0);
+    }
+</style>
+<div class="hody">
+    <div class="container text-center align-content-center text-white">
+        <span class="subHeading">
+            Welkom op de JDV Webshop!
+        </span>
+        <h1 class="headerHero">
+            The Best PCs in België
+        </h1>
+        <div class="beschrijving">
+            <p>
+                upgrade vandaag nog uw gaming-ervaring met onze krachtige en betrouwbare computers!
+            </p>
+        </div>
+        <div class="btn-1">
+            <a asp-controller="Aanbod" asp-action="GamePc"><span>Vindt jouw systeem</span></a>
+        </div>
+    </div>
+</div>
+<div class="container text-white">
+    <div class="row wrm-prebuild">
+        <div class="col-md-6" >
+            <h1 >Waarom Prebuild?</h1>
+            <div >
+                <p>
+                    Deze PC's zijn niet alleen gebouwd door experts, ze zijn ook ontworpen door hen! NZXT Prebuilds zijn gemaakt met budget en ervaring in het achterhoofd.
+                </p>
+            </div>
+            <h5>Prijs</h5>
+            <div >
+                <p>
+                    Bespaar op bouwkosten en de kosten van het afzonderlijk kopen van onderdelen.
+                </p>
+            </div>
+            <h5>Kwaliteit</h5>
+            <div>
+                <p>
+                    Krijg dezelfde hoogwaardige componenten als wanneer je een pc op maat koopt.
+                </p>
+            </div>
+            <h5>Gemak</h5>
+            <div>
+                <p>
+                    Prebuilds worden door deskundigen samengesteld, met een eenvoudige reeks producten om uit te kiezen.
+                </p>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <img src="/images/Transparant/computer_transparant.png" style="height:auto; width:100%;"/>
+        </div>
+    </div>
+</div>
+<div style="background:#EF233C; padding:50px;">
+<div class="container align-content-center">
+    <h1 class="text-center text-white">Exlusieve Pro-Pc's</h1>
+    <div class="beschrijving text-center text-white" style="margin-bottom:25px;">
+        <p>Shop onze Exclusive-serie met premium behuizingen en de nieuwste GPU's.</p>
+    </div>
+    <div class="row">
+        @foreach (var item in Model.Computers.Take(3))
+        {
+            <div style="padding:10px;" class="col-md-4">
+                <div class="card">
+                    <div class="text-center mainColor" style="padding:10px;">
+                        <h5 class="card-title">@item.Naam</h5>
+                    </div>
+                    <img class="card-img-top" src="~/images/computer.jpg" alt="Card image cap" style="height:auto;">
+                    <div class="card-body">
+                        <p class="card-text">$@item.Prijs</p>
+                        <hr />
+                        <div class="card-text"><b>CPU</b> @item.Cpu</div>
+                        <div class="card-text"><b>GPU</b> @item.Gpu</div>
+                        <div class="card-text"><b>Ram</b> @item.Ram</div>
+                        <div class="card-text"><b>SSD</b> @item.Opslag</div>
+                        <hr />
+                        <a asp-controller="Aanbod" asp-action="Details" asp-route-id="@item.Id" class="btn btn-primary">Bekijk product</a>
+                        <a href="#" class="btn btn-primary">In winkelmandje</a>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+</div>
+<div style="padding:25px;">
+    <div class="container text-center align-content-center">
+        <div class="row" style="margin-bottom:10%;">
+            <div style=" height:400px; padding:20px;" class="col-md-6">
+                <span class="subHeading">
+                    Gebouwd door experts
+                </span>
+                <div class="beschrijving">
+                    <p>
+                        Onze voorgeassembleerde computers zijn samengesteld door experts met jarenlange ervaring in de branche. Ze selecteren zorgvuldig elke component van topfabrikanten om ervoor te zorgen dat de computer aan onze hoge standaarden voldoet voor prestaties en betrouwbaarheid. Voordat elk systeem wordt verzonden, testen ze het grondig om ervoor te zorgen dat het klaar is om direct uit de doos te worden gebruikt.
+                    </p>
+                </div>
+            </div>
+            <div style=" height:400px; padding:20px;" class="col-md-6">
+                <span class="subHeading">
+                    Transparante prijzen
+                </span>
+                <div class="beschrijving">
+                    <p>
+                        Onze voorgeassembleerde computers hebben een goede prijs in vergelijking met het kopen van losse componenten en het zelf samenstellen van een computer. Door te kiezen voor één van onze voorgeassembleerde modellen, bespaart u tijd en moeite door niet zelf de componenten te hoeven uitzoeken en de computer te hoeven samenstellen. Bovendien bieden wij regelmatig aanbiedingen en kortingen op onze voorgeassembleerde computers.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

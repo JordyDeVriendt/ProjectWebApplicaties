@@ -1,0 +1,86 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@model Project.ViewModels.ComputerListViewModel
+
+<div class="container">
+    <h2>Game Pc's</h2>
+    <a asp-action="GamePcCreate">Voeg een computer toe</a>
+    <div class="row">
+        <div class="col-md-0">
+        </div>
+        <div class="col-md-12">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>
+                            #
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(c => c.Computers[0].Afbeelding)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(c => c.Computers[0].Naam)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(c => c.Computers[0].Prijs)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(c => c.Computers[0].Cpu)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(c => c.Computers[0].Gpu)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(c => c.Computers[0].Ram)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(c => c.Computers[0].Opslag)
+                        </th>
+                        <th>
+                            Actions
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var c in Model.Computers)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => c.Id)
+                            </td>
+                            <td>
+                                <img src="~/images/computer.jpg"/>
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => c.Naam)
+                            </td>
+                            <td>
+                                $@Html.DisplayFor(modelItem => c.Prijs)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => c.Cpu)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => c.Gpu)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => c.Ram)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => c.Opslag)
+                            </td>
+                            <td>
+                                <a asp-action="GamePcEdit" asp-route-id="@c.Id">Edit</a>
+                                <a asp-action="GamePcDetails" asp-route-id="@c.Id">Details</a>
+                                <a asp-action="GamePcDelete" asp-route-id="@c.Id">Delete</a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

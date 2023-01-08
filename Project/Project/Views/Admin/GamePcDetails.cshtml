@@ -1,0 +1,64 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    ViewData["Title"] = "Details";
+}
+@model Project.ViewModels.ComputerDetailsViewModel
+
+<div class="container TechSpecs" style="margin-top:5%;">
+    @Html.ActionLink("Terug","GamePc","Admin")
+    <div class="row">
+        <div class="col-md-4">
+            <img src="/images/computer.jpg" style="height:auto; width:100%;"/>
+        </div>
+        <div class="col-md-4">
+            <p>
+                <b>Id:</b> @Model.Id
+            </p>
+            <hr />
+            <p>
+                <b>Naam:</b> @Model.Naam
+            </p>
+            <hr />
+            <p>
+                <b>Prijs:</b> @Model.Prijs
+            </p>
+            <hr />
+            <p>
+                <b>OperatingSystem:</b> @Model.OperatingSystem
+            </p>
+            <hr />
+            <p>
+                <b>Ram:</b> @Model.Ram
+            </p>
+            <hr />
+            <p>
+                <b>Moederbord:</b> @Model.Moederbord
+            </p>
+            <hr />
+        </div>
+        <div class="col-md-4">
+            <p>
+                <b>CpuCooler:</b> @Model.CpuCooler
+            </p>
+            <hr />
+            <p>
+                <b>Behuizing:</b> @Model.Behuizing
+            </p>
+            <hr />
+            <p>
+                <b>Opslag:</b> @Model.Opslag
+            </p>
+            <hr />
+            <p>
+                <b>Cpu:</b> @Model.Cpu
+            </p>
+            <hr />
+            <p>
+                <b>Gpu:</b> @Model.Gpu
+            </p>
+            <hr />
+        </div>
+    </div>
+</div>

@@ -1,0 +1,20 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    ViewData["Title"] = "Details";
+}
+@model Project.ViewModels.GebruikersDetailsViewModel
+<div class="container">
+    <h1>@Model.Naam</h1>
+    <p>
+        Id: @Model.Id
+    </p>
+    <p>
+        Username: @Model.UserName
+    </p>
+    <p>
+        Geboortedatum: @Model.GeboorteDatum
+    </p>
+    @Html.ActionLink("Terug","Index","Gebruiker")
+</div>

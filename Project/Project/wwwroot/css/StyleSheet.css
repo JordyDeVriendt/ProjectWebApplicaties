@@ -1,0 +1,30 @@
+﻿.mainColor {
+    background: #8D99AE;
+    color:white;
+}
+.center {
+    margin: 0;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+.GamePc {
+    padding-top: 50px;
+    margin-bottom: 100px;
+    background: #8D99AE;
+    color: white;
+    padding-bottom: 50px;
+}
+
+.GamePcContent {
+    padding-bottom: 10%;
+    padding-top: 3%;
+}
+.GamePcContent hr {
+    border-top: 1px solid black;
+}
+.Specs hr {
+    border-top: 1px solid white;
+}
