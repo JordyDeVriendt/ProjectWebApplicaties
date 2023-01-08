@@ -73,9 +73,9 @@ namespace Project
                 endpoints.MapRazorPages();
             });
 
-            CreateRoles(serviceProvider).Wait();
+            //CreateRoles(serviceProvider).Wait();
         }
-        private async Task CreateRoles(IServiceProvider serviceProvider)
+        /*private async Task CreateRoles(IServiceProvider serviceProvider)
         {
             RoleManager<IdentityRole> roleManager = serviceProvider.GetService<RoleManager<IdentityRole>>();
             ProjectContext context = serviceProvider.GetRequiredService<ProjectContext>();
@@ -94,6 +94,6 @@ namespace Project
             }
 
             context.SaveChanges();
-        }
+        }*/
     }
 }
